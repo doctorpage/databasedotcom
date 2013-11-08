@@ -226,6 +226,10 @@ module Databasedotcom
         self.client.query("SELECT #{self.field_list} FROM #{self.sobject_name}")
       end
 
+      def self.all_with_deleted
+        self.client.query_all("SELECT #{self.field_list} FROM #{self.sobject_name}")
+      end
+
       # Returns a collection of instances of self that match the conditional +where_expr+, which is the WHERE part of a SOQL query.
       #
       #    client.materialize("Car")
